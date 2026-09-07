@@ -5,7 +5,7 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
-# 🔥 THIS IS THE NEW LINE THAT FIXES THE 403 ERROR 🔥
+# This gives the action permission to edit your README
 permissions:
   contents: write
 
@@ -15,13 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: athul/waka-readme@v4
+      - uses: athul/waka-readme@master # <--- CHANGED from @v4 to @master (this is the fix!)
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           SHOW_TITLE: true
           SECTION_NAME: waka
           BLOCKS: ⣀⣤⣦⣶⣷⣿
-          TIME_RANGE: last_year # Changed to 'last_year' to show your 587 hours immediately!
+          TIME_RANGE: last_year
           LANG_COUNT: 10
           SHOW_TIME: true
           SHOW_TOTAL: true
