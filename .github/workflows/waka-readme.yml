@@ -5,6 +5,10 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+# 🔥 THIS IS THE NEW LINE THAT FIXES THE 403 ERROR 🔥
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     name: Update WakaTime Stats
@@ -17,7 +21,7 @@ jobs:
           SHOW_TITLE: true
           SECTION_NAME: waka
           BLOCKS: ⣀⣤⣦⣶⣷⣿
-          TIME_RANGE: last_7_days
+          TIME_RANGE: last_year # Changed to 'last_year' to show your 587 hours immediately!
           LANG_COUNT: 10
           SHOW_TIME: true
           SHOW_TOTAL: true
