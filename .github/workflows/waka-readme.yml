@@ -13,6 +13,8 @@ jobs:
   update-readme:
     name: Update WakaTime Stats
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: athul/waka-readme@master # <--- CHANGED from @v4 to @master (this is the fix!)
